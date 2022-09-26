@@ -19,7 +19,7 @@ elif [[ "$block" -gt 0 ]]; then
         curl -s -X POST "https://api.telegram.org/bot$TOKEN_BOT/sendmessage" -d "chat_id=$ID" -d "parse_mode=html" -d "text= ⚠️ NODE IS MISSING BLOCKS: $block missed blocks"
 fi
    printf "sleep"
-        for((sec=0; sec<60; sec++))
+        for((sec=0; sec<300; sec++))
         do
                 printf "."
                 sleep 1
