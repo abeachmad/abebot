@@ -12,10 +12,10 @@ if  [ "$jail" == "false" ]; then
 elif [ "$jail" == "true" ]; then
         curl -s -X POST "https://api.telegram.org/bot$TOKEN_BOT/sendmessage" -d "chat_id=$ID" -d "parse_mode=html" -d "text= ❌ $VALIDATOR IS JAILED"
 fi
-block=$(haqqd q slashing signing-info $(haqqd tendermint show-validator) -ot | jq .missed_blocks_counter)
-if  [[ "$block" == "0" ]]; then
+block=$(haqqd q slashing signing-info $(haqqd tendermint show-validator) -oj | jq .missed_blocks_counter | grep -o -E '[0-9]+')
+if  [[ "$block" -eq 0 ]]; then
         curl -s -X POST "https://api.telegram.org/bot$TOKEN_BOT/sendmessage" -d "chat_id=$ID" -d "parse_mode=html" -d "text= ✅ NODE MISSED NO BLOCK"
-elif [[ "$block" != "0" ]]; then
+elif [[ "$block" -gt 0 ]]; then
         curl -s -X POST "https://api.telegram.org/bot$TOKEN_BOT/sendmessage" -d "chat_id=$ID" -d "parse_mode=html" -d "text= ⚠️ NODE IS MISSING BLOCKS: $block missed blocks"
 fi
    printf "sleep"
