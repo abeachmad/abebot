@@ -22,4 +22,4 @@ sleep 1
 
 clear
 cd $HOME
-wget -O nodechecker.sh https://raw.githubusercontent.com/abeachmad/abebot/blob/main/nodechecker.sh && chmod +x nodechecker.sh && screen -xR -S abebot ./nodechecker.sh
+wget -O nodechecker.sh https://raw.githubusercontent.com/abeachmad/abebot/main/nodechecker.sh && chmod +x nodechecker.sh && screen -xR -S abebot ./nodechecker.sh
