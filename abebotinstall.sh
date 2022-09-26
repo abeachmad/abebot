@@ -1,6 +1,8 @@
 #!/bin/bash
 sudo apt update && sudo apt install screen -y
-
+echo "Welcome to Haqq Node Checker!"
+echo "This is a telegram bot to warn you about your node state"
+echo "to continue, please provide your ID Chat and Validator Address"
 sleep 1
 
 # set vars
