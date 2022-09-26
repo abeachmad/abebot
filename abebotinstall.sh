@@ -5,6 +5,7 @@ clear
 echo "Welcome to Haqq Node Checker!"
 echo "This is a telegram bot to warn you about your node state"
 echo "to continue, please provide your telegram ID Chat and Validator Address"
+echo "Validator Address start with haqqvaloperxxxxxxxxxx"
 sleep 1
 
 # set vars
