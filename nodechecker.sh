@@ -23,4 +23,5 @@ fi
                 sleep 1
         done
         printf "\n"
+        echo "Press Ctrl+A+D to detach from this screen..."
 done
