@@ -6,7 +6,7 @@ TOKEN_BOT="5745269620:AAEu6smmKpCJyztqV9sXzx2MNBGsVGVzfTs"
 while true
 do
 cd "$HOME"/ || return
-jail=$(haqqd q staking validator "$VALIDATOR" -oj | jq .jailed)
+jail=$(haqqd q staking validator $VALIDATOR -oj | jq .jailed)
 if  [ "$jail" == "false" ]; then
         curl -s -X POST "https://api.telegram.org/bot$TOKEN_BOT/sendmessage" -d "chat_id=$ID" -d "parse_mode=html" -d "text= ✅ VALIDATOR IS FINE"
 elif [ "$jail" == "true" ]; then
