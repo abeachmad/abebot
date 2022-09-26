@@ -12,7 +12,7 @@ if [ ! "$ID_CHAT" ]; then
 read -r -p "Input Your ID_CHAT: " ID_CHAT
 echo 'export ID_CHAT='\"${ID_CHAT}\" >> $HOME/.bash_profile
 read -r -p "Input Your Validator Address: " VALIDATOR_ADDRESS
-echo 'export WALLET_ADDRESS='\"${VALIDATOR_ADDRESS}\" >> $HOME/.bash_profile
+echo 'export VALIDATOR_ADDRESS='\"${VALIDATOR_ADDRESS}\" >> $HOME/.bash_profile
 fi
 echo "source $HOME/.bashrc" >> "$HOME"/.bash_profile
 . "$HOME"/.bash_profile
